@@ -9,7 +9,7 @@
 body {
   background: linear-gradient(135deg, #f5f5f5 0%, #e0f2f1 100%);
   color: #333;
-  padding: 0 3vw;
+  padding: 0;
   min-height: 100vh;
 }
 
@@ -18,9 +18,10 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 3vw;
+  padding: 15px 0;
   background: #26a69a;
   color: white;
+  width: 100%;
 }
 
 .logo {
@@ -31,6 +32,7 @@ header {
   text-decoration: none;
   color: white;
   cursor: pointer;
+  padding-left: 3vw;
 }
 
 .dot {
@@ -38,6 +40,10 @@ header {
   height: 12px;
   border-radius: 50%;
   margin-right: 8px;
+}
+
+nav {
+  padding-right: 3vw;
 }
 
 nav a {
@@ -59,7 +65,7 @@ nav a.active {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  padding: 40px 4vw;
+  padding: 40px 3vw;
   text-align: center;
   gap: 30px;
   background: #e0f2f1;
@@ -127,11 +133,20 @@ nav a.active {
   transition: transform 0.3s ease;
 }
 
+.btn.yellow {
+  background: linear-gradient(45deg, #ffca28, #ffeb3b);
+  width: 120px;
+  height: 50px;
+  border-radius: 25px;
+  font-size: 1rem;
+  padding: 10px 20px;
+}
+
 .btn:hover {
   transform: scale(1.1);
 }
 
-.btn.yellow { background: linear-gradient(45deg, #ffca28, #ffeb3b); }
+.btn.yellow:hover { background: linear-gradient(45deg, #ffeb3b, #ffd54f); }
 .btn.purple { background: linear-gradient(45deg, #ab47bc, #ce93d8); }
 .btn.teal { background: linear-gradient(45deg, #26a69a, #4dd0e1); }
 
@@ -154,14 +169,14 @@ nav a.active {
 
 /* Skills Section (for index.html and resume.html) */
 .skills-section, .resume-category {
-  padding: 50px 4vw;
+  padding: 30px 3vw;
   text-align: center;
   background: #ffffff;
 }
 
 .skills-section h2, .resume-section h2 {
   font-size: 2.5rem;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   color: #26a69a;
 }
 
@@ -169,12 +184,12 @@ nav a.active {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
+  gap: 15px;
 }
 
 .skill-card {
   background: #e0f7fa;
-  padding: 10px 20px;
+  padding: 8px 15px;
   border-radius: 8px;
   font-size: 0.9rem;
   font-weight: 500;
@@ -189,14 +204,14 @@ nav a.active {
 
 /* Featured Projects (for index.html and projects.html) */
 .featured-projects {
-  padding: 60px 4vw;
+  padding: 40px 3vw;
   text-align: center;
   background: #ffffff;
 }
 
 .featured-projects h2 {
   font-size: 3rem;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
   font-weight: bold;
   background: linear-gradient(90deg, #26a69a, #ab47bc);
   -webkit-background-clip: text;
@@ -207,16 +222,17 @@ nav a.active {
 .projects-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 40px;
-  padding: 0 4vw;
+  gap: 25px;
+  padding: 0 3vw;
 }
 
 .project-card {
   background: linear-gradient(135deg, #e0f7fa, #f3e5f5);
-  padding: 20px;
+  padding: 15px;
   border-radius: 12px;
   box-shadow: 0 6px 12px rgba(0,0,0,0.15);
   transition: transform 0.3s ease;
+  text-align: left;
 }
 
 .project-card:hover {
@@ -224,7 +240,7 @@ nav a.active {
 }
 
 .project-card h3 {
-  margin-bottom: 12px;
+  margin-bottom: 10px;
   font-size: 1.2rem;
   color: #26a69a;
 }
@@ -233,10 +249,10 @@ nav a.active {
   font-size: 0.9rem;
   color: #555;
   line-height: 1.6;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
-.project-link {
+.project-link, .figma-link {
   display: inline-block;
   padding: 8px 15px;
   background: linear-gradient(45deg, #ffca28, #ffeb3b);
@@ -246,24 +262,27 @@ nav a.active {
   font-size: 0.9rem;
   font-weight: 500;
   transition: background 0.3s ease, transform 0.3s ease;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-.project-link:hover {
+.project-link:hover, .figma-link:hover {
   background: linear-gradient(45deg, #ffeb3b, #ffd54f);
   transform: translateY(-2px);
 }
 
 /* Resume Section */
 .resume-section {
-  margin: 30px 4vw;
+  margin: 20px 3vw;
   background: #ffffff;
-  padding: 30px;
+  padding: 20px;
   border-radius: 12px;
 }
 
 .resume-section h2 {
   font-size: 2.5rem;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   font-weight: bold;
   text-align: center;
   color: #26a69a;
@@ -271,16 +290,16 @@ nav a.active {
 
 .resume-entry, .resume-card {
   background: linear-gradient(135deg, #e0f7fa, #f3e5f5);
-  padding: 15px;
+  padding: 10px;
   border-radius: 8px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 .resume-entry h3, .category-title {
   font-size: 1.5rem;
   font-weight: bold;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   color: #ab47bc;
 }
 
@@ -300,42 +319,35 @@ nav a.active {
 .duration {
   font-size: 0.9rem;
   color: #777;
-  margin-bottom: 8px;
+  margin-bottom: 5px;
 }
 
 .resume-category {
-  margin-bottom: 30px;
-}
-
-.figma-link {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 8px 15px;
-  background: linear-gradient(45deg, #ffca28, #ffeb3b);
-  color: #333;
-  text-decoration: none;
-  border-radius: 8px;
-  font-size: 0.9rem;
-  font-weight: 500;
-  transition: background 0.3s ease;
-}
-
-.figma-link:hover {
-  background: linear-gradient(45deg, #ffeb3b, #ffd54f);
-  transform: translateY(-2px);
+  margin-bottom: 20px;
 }
 
 /* Contact Section (for contact.html) */
 .contact-section {
-  padding: 30px 4vw;
+  padding: 20px 3vw;
   background: #e0f2f1;
 }
 
 .contact-section h2 {
   text-align: center;
   font-size: 2.5rem;
-  margin-bottom: 30px;
+  margin-bottom: 15px;
   color: #26a69a;
+}
+
+.contact-message {
+  text-align: center;
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .container {
@@ -346,7 +358,7 @@ nav a.active {
 form {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 15px;
+  gap: 10px;
 }
 
 .full-width {
@@ -377,7 +389,7 @@ textarea {
 }
 
 button {
-  margin-top: 15px;
+  margin-top: 10px;
   padding: 12px 25px;
   background: linear-gradient(45deg, #ffca28, #ffeb3b);
   color: #333;
@@ -393,20 +405,53 @@ button:hover {
   background: linear-gradient(45deg, #ffeb3b, #ffd54f);
 }
 
+/* Location Section */
+.location-section {
+  padding: 20px 3vw;
+  background: #ffffff;
+  text-align: center;
+}
+
+.location-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  color: #26a69a;
+}
+
+.location-desc {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.map-container {
+  max-width: 800px;
+  margin: 0 auto;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
 /* Footer */
 footer {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  padding: 20px 4vw;
+  padding: 15px 0;
   background: #26a69a;
   text-align: center;
   font-size: 0.85rem;
   color: white;
+  width: 100%;
 }
 
 .footer-section {
-  margin: 10px;
+  margin: 5px;
+  padding: 0 10px;
 }
 
 .icon {
@@ -420,11 +465,12 @@ footer {
   header {
     flex-direction: column;
     align-items: flex-start;
-    padding: 10px 3vw;
+    padding: 10px 0;
   }
 
   .logo {
     font-size: 1.2rem;
+    padding-left: 3vw;
   }
 
   .dot {
@@ -436,16 +482,18 @@ footer {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
+    padding: 10px 3vw;
+    justify-content: flex-start;
   }
 
   nav a {
-    margin: 8px 10px 0 0;
+    margin: 5px 10px 0 0;
     font-size: 0.9rem;
   }
 
   .hero {
-    padding: 30px 3vw;
-    gap: 20px;
+    padding: 20px 3vw;
+    gap: 15px;
   }
 
   .profile-pic img {
@@ -470,10 +518,10 @@ footer {
   }
 
   .circle-buttons {
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-    margin-bottom: 30px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
   }
 
   .btn {
@@ -482,22 +530,29 @@ footer {
     font-size: 0.75rem;
   }
 
+  .btn.yellow {
+    width: 100px;
+    height: 45px;
+    font-size: 0.9rem;
+    padding: 8px 15px;
+  }
+
   .cta-button {
     padding: 12px 25px;
     font-size: 1rem;
   }
 
   .skills-section {
-    padding: 30px 3vw;
+    padding: 20px 3vw;
   }
 
   .skills-section h2 {
     font-size: 1.8rem;
-    margin-bottom: 25px;
+    margin-bottom: 15px;
   }
 
   .skills-container {
-    gap: 15px;
+    gap: 10px;
   }
 
   .skill-card {
@@ -507,22 +562,22 @@ footer {
   }
 
   .featured-projects {
-    padding: 40px 3vw;
+    padding: 30px 3vw;
   }
 
   .featured-projects h2 {
     font-size: 2rem;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
   }
 
   .projects-container {
     grid-template-columns: 1fr;
-    gap: 25px;
+    gap: 20px;
     padding: 0 3vw;
   }
 
   .project-card {
-    padding: 15px;
+    padding: 10px;
   }
 
   .project-card h3 {
@@ -533,14 +588,14 @@ footer {
     font-size: 0.85rem;
   }
 
-  .project-link {
+  .project-link, .figma-link {
     font-size: 0.85rem;
     padding: 6px 12px;
   }
 
   .resume-section {
-    margin: 20px 3vw;
-    padding: 20px;
+    margin: 15px 3vw;
+    padding: 15px;
   }
 
   .resume-section h2 {
@@ -564,11 +619,15 @@ footer {
   }
 
   .contact-section {
-    padding: 20px 3vw;
+    padding: 15px 3vw;
   }
 
   .contact-section h2 {
     font-size: 1.8rem;
+  }
+
+  .contact-message {
+    font-size: 0.9rem;
   }
 
   input, select, textarea {
@@ -581,19 +640,45 @@ footer {
     font-size: 0.9rem;
   }
 
-  footer {
+  .location-section {
     padding: 15px 3vw;
+  }
+
+  .location-section h2 {
+    font-size: 1.8rem;
+  }
+
+  .location-desc {
+    font-size: 0.9rem;
+  }
+
+  .map-container iframe {
+    height: 300px;
+  }
+
+  footer {
+    padding: 10px 0;
     font-size: 0.8rem;
+    flex-direction: column;
+  }
+
+  .footer-section {
+    margin: 5px 0;
   }
 }
 
 @media (min-width: 481px) and (max-width: 768px) {
   header {
-    padding: 12px 3vw;
+    padding: 12px 0;
   }
 
   .logo {
     font-size: 1.3rem;
+    padding-left: 3vw;
+  }
+
+  nav {
+    padding-right: 3vw;
   }
 
   nav a {
@@ -627,8 +712,14 @@ footer {
     height: 60px;
   }
 
+  .btn.yellow {
+    width: 110px;
+    height: 48px;
+    font-size: 0.95rem;
+  }
+
   .skills-section {
-    padding: 40px 3vw;
+    padding: 30px 3vw;
   }
 
   .skills-section h2 {
@@ -636,27 +727,27 @@ footer {
   }
 
   .skills-container {
-    gap: 20px;
+    gap: 15px;
   }
 
   .featured-projects {
-    padding: 50px 3vw;
+    padding: 40px 3vw;
   }
 
   .featured-projects h2 {
     font-size: 2.5rem;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
   }
 
   .projects-container {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 35px;
+    gap: 25px;
     padding: 0 3vw;
   }
 
   .resume-section {
-    margin: 25px 3vw;
-    padding: 25px;
+    margin: 20px 3vw;
+    padding: 20px;
   }
 
   .resume-section h2 {
@@ -664,21 +755,43 @@ footer {
   }
 
   .contact-section {
-    padding: 25px 3vw;
+    padding: 20px 3vw;
   }
 
   .contact-section h2 {
     font-size: 2rem;
   }
+
+  .location-section {
+    padding: 20px 3vw;
+  }
+
+  .location-section h2 {
+    font-size: 2rem;
+  }
+
+  .map-container iframe {
+    height: 350px;
+  }
+
+  footer {
+    flex-direction: row;
+    padding: 12px 0;
+  }
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
   header {
-    padding: 15px 3vw;
+    padding: 15px 0;
   }
 
   .logo {
     font-size: 1.4rem;
+    padding-left: 3vw;
+  }
+
+  nav {
+    padding-right: 3vw;
   }
 
   nav a {
@@ -692,7 +805,7 @@ footer {
 
   .projects-container {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 40px;
+    gap: 30px;
   }
 
   form {
@@ -701,5 +814,9 @@ footer {
 
   .full-width {
     grid-column: span 2;
+  }
+
+  footer {
+    padding: 15px 0;
   }
 }
