@@ -1,4 +1,4 @@
-/* style.css */
+
 * {
   margin: 0;
   padding: 0;
@@ -67,8 +67,7 @@ nav a.active {
   align-items: center;
   padding: 40px 3vw;
   text-align: center;
-  gap: 20px;
-  background: #e0f2f1;
+  gap: 30px;
 }
 
 .profile-pic img {
@@ -77,7 +76,7 @@ nav a.active {
   height: auto;
   border-radius: 50%;
   object-fit: cover;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
@@ -92,20 +91,20 @@ nav a.active {
 
 .intro h1 {
   font-size: 2.8rem;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
   color: #26a69a;
 }
 
 .tagline {
   font-size: 1.3rem;
   color: #ab47bc;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 .about-desc {
   font-size: 1rem;
   line-height: 1.7;
-  margin: 15px 0;
+  margin: 20px 0;
   max-width: 550px;
   color: #555;
 }
@@ -113,8 +112,8 @@ nav a.active {
 .circle-buttons {
   display: flex;
   justify-content: center;
-  gap: 12px;
-  margin-bottom: 20px;
+  gap: 15px;
+  margin-bottom: 25px;
 }
 
 .btn {
@@ -122,7 +121,7 @@ nav a.active {
   align-items: center;
   justify-content: center;
   padding: 15px;
-  border-radius: 50%;
+  border-radius: 50%; /* Circular buttons */
   color: white;
   font-weight: bold;
   text-decoration: none;
@@ -135,21 +134,52 @@ nav a.active {
 
 .btn.yellow {
   background: linear-gradient(45deg, #ffca28, #ffeb3b);
-  width: 120px;
-  height: 50px;
-  border-radius: 25px;
-  font-size: 1rem;
-  padding: 10px 20px;
+  width: 70px; /* Same width as .btn */
+  height: 70px; /* Same height as .btn */
+  border-radius: 50%; /* Circular */
+  font-size: 0.9rem;
+  padding: 10px;
 }
 
 .btn:hover {
   transform: scale(1.1);
 }
 
-.btn.yellow:hover { background: linear-gradient(45deg, #ffeb3b, #ffd54f); }
-.btn.purple { background: linear-gradient(45deg, #ab47bc, #ce93d8); }
-.btn.teal { background: linear-gradient(45deg, #26a69a, #4dd0e1); }
+.btn.yellow:hover { 
+  background: linear-gradient(45deg, #ffeb3b, #ffd54f);
+}
 
+.btn.purple { 
+  background: linear-gradient(45deg, #ab47bc, #ce93d8);
+}
+
+.btn.teal { 
+  background: linear-gradient(45deg, #26a69a, #4dd0e1);
+}
+
+/* Rectangular button style for Resume, Projects, Contact buttons */
+.btn-rectangular {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 25px;
+  border-radius: 12px;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  background: linear-gradient(45deg, #ffca28, #ffeb3b);
+  font-size: 1rem;
+  transition: background 0.3s ease, transform 0.3s ease;
+  min-width: 130px;
+  box-sizing: border-box;
+}
+
+.btn-rectangular:hover {
+  background: linear-gradient(45deg, #ffeb3b, #ffd54f);
+  transform: translateY(-2px);
+}
+
+/* CTA Button */
 .cta-button {
   display: inline-block;
   padding: 14px 30px;
@@ -159,7 +189,7 @@ nav a.active {
   border-radius: 12px;
   font-size: 1.1rem;
   font-weight: bold;
-  margin-top: 15px;
+  margin-top: 20px;
   transition: background 0.3s ease;
 }
 
@@ -492,70 +522,64 @@ footer {
   }
 
   .hero {
-    flex-direction: column;
-    padding: 20px 5vw;
-    gap: 10px;
-  }
-
-  .profile-pic {
-    margin: 0 auto;
+    padding: 20px 3vw;
+    gap: 15px;
   }
 
   .profile-pic img {
-    max-width: 140px;
-    margin-bottom: 10px;
+    max-width: 150px;
   }
 
   .intro {
     max-width: 100%;
-    padding: 0;
+    padding: 0 10px;
   }
 
   .intro h1 {
-    font-size: 1.8rem;
-    margin-bottom: 8px;
+    font-size: 2rem;
   }
 
   .tagline {
-    font-size: 1rem;
-    margin-bottom: 10px;
+    font-size: 1.1rem;
   }
 
   .about-desc {
     font-size: 0.9rem;
-    line-height: 1.5;
-    margin: 10px 0;
   }
 
   .circle-buttons {
+    flex-direction: row;
     flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 15px;
+    gap: 10px;
+    margin-bottom: 20px;
   }
 
   .btn {
-    width: 50px;
-    height: 50px;
-    font-size: 0.7rem;
-    padding: 10px;
+    width: 55px;
+    height: 55px;
+    font-size: 0.75rem;
   }
 
   .btn.yellow {
-    width: 90px;
-    height: 40px;
+    width: 55px;
+    height: 55px;
+    font-size: 0.75rem;
+    padding: 8px 10px;
+  }
+
+  .btn-rectangular {
+    min-width: 110px;
+    padding: 10px 20px;
     font-size: 0.85rem;
-    padding: 8px 15px;
-    border-radius: 20px;
   }
 
   .cta-button {
-    padding: 10px 20px;
-    font-size: 0.9rem;
-    margin-top: 10px;
+    padding: 12px 25px;
+    font-size: 1rem;
   }
 
   .skills-section {
-    padding: 20px 5vw;
+    padding: 20px 3vw;
   }
 
   .skills-section h2 {
@@ -569,12 +593,12 @@ footer {
 
   .skill-card {
     font-size: 0.85rem;
-    padding: 6px 12px;
-    max-width: 110px;
+    padding: 8px 15px;
+    max-width: 120px;
   }
 
   .featured-projects {
-    padding: 30px 5vw;
+    padding: 30px 3vw;
   }
 
   .featured-projects h2 {
@@ -585,7 +609,7 @@ footer {
   .projects-container {
     grid-template-columns: 1fr;
     gap: 20px;
-    padding: 0;
+    padding: 0 3vw;
   }
 
   .project-card {
@@ -606,7 +630,7 @@ footer {
   }
 
   .resume-section {
-    margin: 15px 5vw;
+    margin: 15px 3vw;
     padding: 15px;
   }
 
@@ -631,7 +655,7 @@ footer {
   }
 
   .contact-section {
-    padding: 15px 5vw;
+    padding: 15px 3vw;
   }
 
   .contact-section h2 {
@@ -653,7 +677,7 @@ footer {
   }
 
   .location-section {
-    padding: 15px 5vw;
+    padding: 15px 3vw;
   }
 
   .location-section h2 {
@@ -699,25 +723,24 @@ footer {
   }
 
   .hero {
-    flex-direction: column;
-    padding: 30px 5vw;
-    gap: 15px;
+    padding: 35px 3vw;
+    gap: 25px;
   }
 
   .profile-pic img {
-    max-width: 160px;
+    max-width: 180px;
   }
 
   .intro h1 {
-    font-size: 2.2rem;
+    font-size: 2.3rem;
   }
 
   .tagline {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
 
   .circle-buttons {
-    gap: 10px;
+    gap: 12px;
   }
 
   .btn {
@@ -726,13 +749,20 @@ footer {
   }
 
   .btn.yellow {
-    width: 110px;
-    height: 48px;
+    width: 60px;
+    height: 60px;
+    font-size: 0.9rem;
+    padding: 8px 10px;
+  }
+
+  .btn-rectangular {
+    min-width: 120px;
+    padding: 12px 24px;
     font-size: 0.95rem;
   }
 
   .skills-section {
-    padding: 30px 5vw;
+    padding: 30px 3vw;
   }
 
   .skills-section h2 {
@@ -744,7 +774,7 @@ footer {
   }
 
   .featured-projects {
-    padding: 40px 5vw;
+    padding: 40px 3vw;
   }
 
   .featured-projects h2 {
@@ -755,11 +785,11 @@ footer {
   .projects-container {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 25px;
-    padding: 0;
+    padding: 0 3vw;
   }
 
   .resume-section {
-    margin: 20px 5vw;
+    margin: 20px 3vw;
     padding: 20px;
   }
 
@@ -768,7 +798,7 @@ footer {
   }
 
   .contact-section {
-    padding: 20px 5vw;
+    padding: 20px 3vw;
   }
 
   .contact-section h2 {
@@ -776,7 +806,7 @@ footer {
   }
 
   .location-section {
-    padding: 20px 5vw;
+    padding: 20px 3vw;
   }
 
   .location-section h2 {
@@ -812,8 +842,8 @@ footer {
   }
 
   .hero {
-    padding: 40px 5vw;
-    gap: 20px;
+    padding: 40px 3vw;
+    gap: 30px;
   }
 
   .projects-container {
@@ -829,16 +859,8 @@ footer {
     grid-column: span 2;
   }
 
-  <section class="hero">
-  <div class="intro">
-    <h1>My Resume</h1>
-    <p class="tagline">Download my CV to know more about my professional journey and skills.</p>
-    <a href="https://drive.google.com/uc?export=download&id=YOUR_FILE_ID" download class="btn yellow" style="margin-top: 15px;">Download CV</a>
-    <p style="font-size: 0.85rem; color: #777; margin-top: 10px;">If the download doesn’t work, <a href="https://drive.google.com/file/d/YOUR_FILE_ID/view?usp=sharing" target="_blank">click here</a> to access the file directly.</p>
-  </div>
-</section>
-
   footer {
     padding: 15px 0;
   }
 }
+
