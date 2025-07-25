@@ -2,144 +2,339 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Faizan Pathan - Projects</title>
-  <meta name="description" content="Faizan Pathan's portfolio showcasing UI/UX design projects">
-  <meta name="keywords" content="Faizan Pathan, UI/UX Designer, projects, portfolio">
-  <meta name="author" content="Faizan Pathan">
-  <meta name="robots" content="index, follow">
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Projects</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #fff;
+      color: #2a2a2a;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1100px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-right {
+      display: flex;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 600;
+      color: #2a2a2a;
+      text-decoration: none;
+    }
+
+    .dot {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      background: #ffca28;
+      border-radius: 50%;
+      margin-right: 8px;
+    }
+
+    .nav-right a {
+      font-weight: 500;
+      color: #2a2a2a;
+      text-decoration: none;
+      font-size: 16px;
+    }
+
+    .nav-right a.active {
+      color: #e91e63;
+    }
+
+    .projects-section {
+      max-width: 1200px;
+      margin: auto;
+      padding: 60px 20px;
+    }
+
+    .projects-section h2 {
+      font-size: 32px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .projects-section p {
+      font-size: 14px;
+      color: #2a2a2a;
+      max-width: 700px;
+      margin-bottom: 50px;
+    }
+
+    .project-card {
+      background: #f2fff4;
+      padding: 30px;
+      margin-bottom: 40px;
+      border-radius: 16px;
+    }
+
+    .project-card:nth-child(even) {
+      background: #fff1f4;
+    }
+
+    .project-content h4 {
+      font-size: 14px;
+      color: #8ac38e;
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+
+    .project-content h3 {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+
+    .project-content p {
+      font-size: 14px;
+      color: #2a2a2a;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    .view-button {
+      background: transparent;
+      border: 1px solid #ccc;
+      padding: 10px 18px;
+      border-radius: 6px;
+      font-size: 14px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-weight: 500;
+      display: inline-block;
+      text-decoration: none;
+      color: #2a2a2a;
+    }
+
+    .view-button:hover {
+      background: #2a2a2a;
+      color: #fff;
+    }
+
+    .center-button {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .center-button button,
+    .center-button a.view-button {
+      background: transparent;
+      border: 1.5px solid #e91e63;
+      color: #e91e63;
+      padding: 12px 28px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s ease;
+      font-weight: 500;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .center-button button:hover,
+    .center-button a.view-button:hover {
+      background: #e91e63;
+      color: white;
+    }
+
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      max-width: 1100px;
+      margin: auto;
+      padding: 20px;
+      border-top: 1px solid #eee;
+      font-size: 14px;
+    }
+
+    .footer img.icon {
+      width: 20px;
+      margin-right: 8px;
+    }
+
+    .project-images {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .project-images img {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 8px;
+    }
+
+    /* Responsive Enhancements */
+    @media (max-width: 768px) {
+      .navbar, .footer {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+      }
+
+      .nav-right {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .projects-section h2 {
+        font-size: 24px;
+        text-align: center;
+      }
+
+      .projects-section p {
+        font-size: 13px;
+        text-align: center;
+      }
+
+      .project-card {
+        padding: 20px;
+        margin-bottom: 30px;
+      }
+
+      .project-content h3 {
+        font-size: 18px;
+      }
+
+      .project-content p {
+        font-size: 13px;
+      }
+
+      .project-images {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .project-images img {
+        max-width: 90%;
+      }
+
+      .center-button button,
+      .center-button a.view-button,
+      .view-button {
+        width: 90%;
+        text-align: center;
+      }
+    }
+
+    @media (min-width: 1600px) {
+      .projects-section {
+        padding: 80px 40px;
+      }
+
+      .project-card {
+        padding: 40px;
+      }
+
+      .projects-section h2 {
+        font-size: 40px;
+      }
+
+      .project-content h3 {
+        font-size: 24px;
+      }
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <a href="index.html" class="logo">
-      <span class="dot" style="background: #ffca28;"></span> Faizan Pathan
-    </a>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="resume.html">Resume</a>
-      <a href="projects.html" class="active">Projects</a>
+
+  <header class="navbar">
+    <div class="nav-left">
+      <a href="index.html" class="logo"><span class="dot"></span> Faizan Pathan</a>
+    </div>
+    <nav class="nav-right">
+      <a href="home.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="project.html" class="active">Projects</a>
       <a href="contact.html">Contact</a>
     </nav>
   </header>
 
-     <div class="recent-client" style="text-align: center; margin-top: 40px;">
-      
-     <a href="https://tuffpowerenergy.netlify.app/" class="recent-client-btn" 
-   style="display: inline-block; padding: 12px 20px; background: #ffca28; color: #000; 
-          text-decoration: none; font-weight: bold; border-radius: 5px;"
-   target="_blank">
-   View Recent Client Projects
-</a>
+  <section class="projects-section">
+    <h2>My Projects</h2>
+    <p>List of real-world and personal web design/development projects I have worked on, demonstrating expertise in UI/UX design and responsive layout strategies. Each project reflects a different domain—from battery manufacturing and digital banking to e-commerce and food recipe platforms—highlighting versatility and adaptability.</p>
 
+    <div class="project-card">
+      <div class="project-content">
+        <h4>UI Design</h4>
+        <h3>Tuffpower Energy</h3>
+        <p>Designed and developed a responsive and user-friendly website for Tuffpower Energy, a company specializing in battery manufacturing. The website showcases the brand’s industrial capabilities, product portfolio, and performance insights while emphasizing intuitive navigation and clean UI aesthetics.</p>
+        <a href="https://tuffpowerenergy.netlify.app/" class="view-button">View project →</a>
+      </div>
     </div>
-    <br>
-    <br>
 
-  <section class="featured-projects">
-    <h2>Projects</h2>
-    <h2 align="center" Recent Client Project> </h2>
-    <div class="projects-container">
-      <div class="project-card">
-        <h3>Food Recipe</h3>
-        <p>A food recipe website offers diverse culinary guides with step-by-step instructions, 
-          ingredient lists, and cooking tips. Users explore various cuisines, from appetizers to 
-          desserts, with nutritional insights and video tutorials. It helps beginners and chefs 
-          enhance their cooking skills.</p>
-        <a href="https://www.figma.com/community/file/1479420026197804048/food-recipe" target="_blank" class="project-link">View Figma Prototype</a>
+    <div class="project-card">
+      <div class="project-content">
+        <h4>UI Design</h4>
+        <h3>Infocentroid Technologies</h3>
+        <p>Designed a secure, modern, and user-friendly dashboard interface for a digital banking platform. The dashboard empowers users to seamlessly manage accounts, track transactions, and perform banking operations with real-time insights and intuitive navigation.</p>
+        <a href="https://www.figma.com/proto/8SY7NJ0bxCsOtpZNjiLhaK/Untitled?node-id=1531-78321" class="view-button">View project →</a>
       </div>
+    </div>
 
-      <div class="project-card">
-        <h3>Ecommerce Website</h3>
-        <p>An eCommerce website is a digital platform where businesses sell products and services 
-          online. It enables secure transactions, user-friendly navigation, and diverse payment 
-          options. Customers browse catalogs, compare prices, and shop conveniently, enhancing 
-          accessibility and global market reach.</p>
-        <a href="https://www.figma.com/community/file/1484816877450697077/e-com" target="_blank" class="project-link">View Figma Prototype</a>
-      </div>
-
-      <div class="project-card">
-        <h3>Food Delivery App</h3>
-        <p>A food delivery app connects users with restaurants and vendors, 
-          enabling easy ordering and doorstep delivery. It offers menu browsing, real-time 
-          tracking, multiple payment options, and customer reviews, ensuring convenience, speed, 
-          and a seamless dining experience from anywhere.</p>
-        <a href="https://www.figma.com/community/file/1479414983025830922/delivery-app" target="_blank" class="project-link">View Figma Prototype</a>
-      </div>
-
-      <div class="project-card">
-        <h3>Tourist Website</h3>
-        <p>A tourist website helps travelers explore destinations, plan trips, and book essential 
-          services like hotels, flights, and activities. It offers travel guides, local attractions, 
-          itineraries, and reviews, ensuring a seamless and enjoyable journey for users worldwide.</p>
-        <a href="https://www.figma.com/community/file/1479762979896538348/tourist-website" target="_blank" class="project-link">View Figma Prototype</a>
-      </div>
-
-      <div class="project-card">
-        <h3>Personal Portfolio</h3>
-        <p>A personal portfolio website showcases an individual's work, skills, and achievements. 
-          It highlights projects, resumes, and creative content, serving as a digital resume for 
-          professionals. Designed to attract clients or employers, it enhances personal branding 
-          and online presence effectively.</p>
-        <a href="https://www.figma.com/community/file/1483368288531124566/faizan-portfolio" target="_blank" class="project-link">View Figma Prototype</a>
+    <div class="project-card">
+      <div class="project-content">
+        <h4>Food Recipe Website</h4>
+        <h3>Personal Project</h3>
+        <p>Developed a vibrant and easy-to-navigate food recipe website focused on culinary inspiration and user convenience.</p>
+        <a href="https://www.figma.com/community/file/1479420026197804048" class="view-button">View project →</a>
       </div>
       
-      <div class="project-card">
-        <h3>Logistics Service</h3>
-        <p>A logistics service efficiently manages the transportation, storage, and delivery of goods. It optimizes supply chains, ensures timely shipments, 
-          and provides tracking solutions. Businesses rely on logistics for inventory management, distribution, 
-          and seamless operations across local and global markets.</p>
-        <a href="https://www.figma.com/community/file/1479414983025830922/delivery-app" target="_blank" class="project-link">View Figma Prototype</a>
-      </div>
+    </div>
 
-      <div class="project-card">
-        <h3>Digital Agency</h3>
-        <p>A digital agency provides services like branding, web design, social media marketing, 
-          SEO, and online advertising to help businesses grow in the digital space. It strategizes 
-          campaigns, enhances user engagement, and optimizes digital presence for maximum reach and 
-          impact.</p>
-        <a href="https://www.figma.com/community/file/1476845457789526502/digital-agency" target="_blank" class="project-link">View Figma Prototype</a>
+    <div class="project-card">
+      <div class="project-content">
+        <h4 style="color:#e91e63">Personal Project</h4>
+        <h3>E-Commerce</h3>
+        <p>Created multiple dummy e-commerce sites to enhance web design skills focusing on UI/UX, responsiveness, and performance.</p>
+        <a href="https://www.figma.com/community/file/1484816877450697077" class="view-button">View project →</a>
       </div>
+    </div>
 
-      <div class="project-card">
-        <h3>Dhar Sanitary</h3>
-        <p>A sanitary website provides information and products related to hygiene, bathroom essentials, 
-          and plumbing solutions. It features categories like toilets, sinks, faucets, and shower 
-          systems, helping users choose quality sanitaryware. The site may offer installation guides, 
-          maintenance tips, and eco-friendly options for water conservation.</p>
-        <a href="https://www.figma.com/community/file/1481927320003156507/dhar-sanitary" target="_blank" class="project-link">View Figma Prototype</a>
-      </div>
-
-      <div class="project-card">
-        <h3>Furniture Shop</h3>
-        <p>A furniture shop offers stylish, durable, and functional home and office furnishings. 
-          It provides sofas, beds, 
-          tables, and storage solutions, catering to diverse design preferences. Customers can 
-          explore various styles, materials, and expert recommendations for comfort and aesthetics.</p>
-        <a href="https://www.figma.com/community/file/1478808573486772834/furniture" target="_blank" class="project-link">View Figma Prototype</a>
-      </div>
-
-      <div class="project-card">
-        <h3>Shadi Maker</h3>
-        <p>A matrimonial website helps individuals find compatible life partners through 
-          verified profiles, advanced matchmaking, and privacy controls. It offers filters 
-          based on religion, profession, and interests, ensuring secure and personalized connections 
-          for successful relationships and marriages.</p>
-        <a href="https://www.figma.com/community/file/1476844950891358693/shade-maker" target="_blank" class="project-link">View Figma Prototype</a>
-      </div>
+    <div class="center-button">
+      <a href="https://www.figma.com/@faizan40" class="view-button">View more</a>
     </div>
   </section>
 
   <footer>
-    <div class="footer-section">Phone<br><strong>+918827029878</strong></div>
-    <div class="footer-section">Email<br><strong><a href="mailto:faizan14srk@gmail.com">faizan14srk@gmail.com</a></strong></div>
-    <div class="footer-section">Follow Me<br>
-      <a href="https://x.com/faizpathann"><img src="https://cdn-icons-png.flaticon.com/512/733/733635.png" class="icon" alt="Twitter" /></a>
-      <a href="https://www.linkedin.com/in/faizan-pathan-a397221b3/"><img src="https://cdn-icons-png.flaticon.com/512/145/145807.png" class="icon" alt="LinkedIn" /></a>
-    </div>
-    <div class="footer-section copyright">
-      ©Copyright by <strong>Faizan Pathan</strong> | All rights reserved.
+    <div class="footer">
+      <div>📞 <strong>+918827029878</strong></div>
+      <div>📧 <strong><a href="mailto:faizan14srk@gmail.com">faizan14srk@gmail.com</a></strong></div>
+      <div>
+        <strong>Follow us:</strong><br>
+        <a href="https://x.com/faizpathann">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733635.png" class="icon" alt="Twitter" />
+        </a>
+        <a href="https://www.linkedin.com/in/faizan-pathan-a397221b3/">
+          <img src="https://cdn-icons-png.flaticon.com/512/145/145807.png" class="icon" alt="LinkedIn" />
+        </a>
+        <a href="https://www.figma.com/@faizan40">
+          <img src="https://cdn-icons-png.flaticon.com/512/5968/5968705.png" class="icon" alt="Figma" />
+        </a>
+      </div>
+      <div>© Copyright by <strong>Faizan Pathan</strong> | All rights reserved.</div>
     </div>
   </footer>
+
 </body>
 </html>
