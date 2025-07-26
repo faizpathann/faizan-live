@@ -13,6 +13,7 @@
       color: #2a2a2a;
     }
 
+    /* ✅ NAVBAR */
     .navbar {
       display: flex;
       justify-content: space-between;
@@ -20,16 +21,12 @@
       max-width: 1100px;
       margin: auto;
       padding: 20px;
+      position: relative;
     }
 
     .nav-left {
       display: flex;
       align-items: center;
-    }
-
-    .nav-right {
-      display: flex;
-      gap: 20px;
     }
 
     .logo {
@@ -48,6 +45,11 @@
       margin-right: 8px;
     }
 
+    .nav-right {
+      display: flex;
+      gap: 20px;
+    }
+
     .nav-right a {
       font-weight: 500;
       color: #2a2a2a;
@@ -59,6 +61,49 @@
       color: #e91e63;
     }
 
+    /* ✅ Hamburger (mobile only) */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      position: absolute;
+      right: 20px;
+      top: 28px;
+    }
+    .hamburger span {
+      width: 25px;
+      height: 3px;
+      background: #2a2a2a;
+      border-radius: 3px;
+    }
+
+    /* ✅ Mobile menu (hidden initially) */
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      background: white;
+      position: absolute;
+      top: 70px;
+      right: 20px;
+      width: 200px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      border-radius: 8px;
+      padding: 10px;
+      z-index: 999;
+    }
+    .mobile-menu a {
+      padding: 10px;
+      border-bottom: 1px solid #eee;
+      font-weight: 500;
+      color: #2a2a2a;
+      text-decoration: none;
+    }
+    .mobile-menu a:last-child {
+      border-bottom: none;
+    }
+
+    /* ✅ Projects section same */
     .projects-section {
       max-width: 1200px;
       margin: auto;
@@ -184,51 +229,45 @@
       border-radius: 8px;
     }
 
-    /* Responsive Enhancements */
+    /* ✅ Responsive */
     @media (max-width: 768px) {
       .navbar, .footer {
         flex-direction: column;
         text-align: center;
         gap: 10px;
       }
-
       .nav-right {
-        flex-direction: column;
-        align-items: center;
+        display: none; /* hide desktop nav */
       }
-
+      /* show hamburger */
+      .hamburger {
+        display: flex;
+      }
       .projects-section h2 {
         font-size: 24px;
         text-align: center;
       }
-
       .projects-section p {
         font-size: 13px;
         text-align: center;
       }
-
       .project-card {
         padding: 20px;
         margin-bottom: 30px;
       }
-
       .project-content h3 {
         font-size: 18px;
       }
-
       .project-content p {
         font-size: 13px;
       }
-
       .project-images {
         flex-direction: column;
         align-items: center;
       }
-
       .project-images img {
         max-width: 90%;
       }
-
       .center-button button,
       .center-button a.view-button,
       .view-button {
@@ -241,15 +280,12 @@
       .projects-section {
         padding: 80px 40px;
       }
-
       .project-card {
         padding: 40px;
       }
-
       .projects-section h2 {
         font-size: 40px;
       }
-
       .project-content h3 {
         font-size: 24px;
       }
@@ -258,18 +294,37 @@
 </head>
 <body>
 
+  <!-- ✅ NAVBAR -->
   <header class="navbar">
     <div class="nav-left">
       <a href="index.html" class="logo"><span class="dot"></span> Faizan Pathan</a>
     </div>
+
+    <!-- Desktop Nav -->
     <nav class="nav-right">
       <a href="home.html">Home</a>
       <a href="about.html">About</a>
       <a href="project.html" class="active">Projects</a>
       <a href="contact.html">Contact</a>
     </nav>
+
+    <!-- Hamburger (mobile) -->
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <!-- Mobile menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="home.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="project.html" class="active">Projects</a>
+      <a href="contact.html">Contact</a>
+    </div>
   </header>
 
+  <!-- ✅ Projects section (unchanged) -->
   <section class="projects-section">
     <h2>My Projects</h2>
     <p>List of real-world and personal web design/development projects I have worked on, demonstrating expertise in UI/UX design and responsive layout strategies. Each project reflects a different domain—from battery manufacturing and digital banking to e-commerce and food recipe platforms—highlighting versatility and adaptability.</p>
@@ -299,7 +354,6 @@
         <p>Developed a vibrant and easy-to-navigate food recipe website focused on culinary inspiration and user convenience.</p>
         <a href="https://www.figma.com/community/file/1479420026197804048" class="view-button">View project →</a>
       </div>
-      
     </div>
 
     <div class="project-card">
@@ -316,6 +370,7 @@
     </div>
   </section>
 
+  <!-- ✅ Footer unchanged -->
   <footer>
     <div class="footer">
       <div>📞 <strong>+918827029878</strong></div>
@@ -335,6 +390,14 @@
       <div>© Copyright by <strong>Faizan Pathan</strong> | All rights reserved.</div>
     </div>
   </footer>
+
+  <!-- ✅ JS to toggle menu -->
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('mobileMenu');
+      menu.style.display = (menu.style.display === 'flex') ? 'none' : 'flex';
+    }
+  </script>
 
 </body>
 </html>
