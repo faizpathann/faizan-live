@@ -15,7 +15,7 @@
       color: #2a2a2a;
     }
 
-    /* Navbar */
+    /* ✅ NAVBAR */
     .navbar {
       display: flex;
       justify-content: space-between;
@@ -23,16 +23,13 @@
       max-width: 1100px;
       margin: auto;
       padding: 20px;
+      position: relative;
+      z-index: 1000;
     }
 
     .nav-left {
       display: flex;
       align-items: center;
-    }
-
-    .nav-right {
-      display: flex;
-      gap: 20px;
     }
 
     .logo {
@@ -53,6 +50,12 @@
       margin-right: 8px;
     }
 
+    /* Desktop menu visible by default */
+    .nav-right {
+      display: flex;
+      gap: 20px;
+    }
+
     .nav-right a {
       font-size: 16px;
       font-weight: 500;
@@ -64,7 +67,48 @@
       color: #e91e63;
     }
 
-    /* Contact Section */
+    /* Hamburger icon hidden on desktop */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      position: absolute;
+      right: 20px; /* Always on right */
+      top: 28px;   /* Align vertically */
+    }
+    .hamburger span {
+      width: 25px;
+      height: 3px;
+      background: #2a2a2a;
+      border-radius: 3px;
+    }
+
+    /* Mobile menu hidden initially */
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      background: white;
+      position: absolute;
+      top: 70px;
+      right: 20px;
+      width: 200px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      border-radius: 8px;
+      padding: 10px;
+    }
+    .mobile-menu a {
+      padding: 10px;
+      border-bottom: 1px solid #eee;
+      font-weight: 500;
+      color: #2a2a2a;
+      text-decoration: none;
+    }
+    .mobile-menu a:last-child {
+      border-bottom: none;
+    }
+
+    /* ✅ CONTACT SECTION */
     .contact-section {
       display: flex;
       justify-content: center;
@@ -148,7 +192,7 @@
       writing-mode: vertical-rl;
     }
 
-    /* Footer */
+    /* ✅ FOOTER */
     .footer {
       display: flex;
       justify-content: space-between;
@@ -166,24 +210,22 @@
       margin-right: 8px;
     }
 
-    /* Media Queries */
-    @media (max-width: 1024px) {
-      .contact-img {
-        padding-right: 0;
-      }
-    }
-
+    /* ✅ RESPONSIVE */
     @media (max-width: 768px) {
+      /* Hide desktop menu */
+      .nav-right {
+        display: none;
+      }
+      /* Show hamburger on mobile */
+      .hamburger {
+        display: flex;
+      }
+
       .navbar,
       .footer {
         flex-direction: column;
         text-align: center;
         gap: 10px;
-      }
-
-      .nav-right {
-        flex-direction: column;
-        align-items: center;
       }
 
       .contact-section {
@@ -211,22 +253,39 @@
 </head>
 <body>
 
-  <!-- Navbar -->
+  <!-- ✅ NAVBAR -->
   <header class="navbar">
     <div class="nav-left">
       <a href="index.html" class="logo">
         <span class="dot"></span> Faizan Pathan
       </a>
     </div>
+
+    <!-- Desktop Menu -->
     <nav class="nav-right">
       <a href="home.html">Home</a>
       <a href="about.html">About</a>
       <a href="project.html">Projects</a>
       <a href="contact.html" class="active">Contact</a>
     </nav>
+
+    <!-- Hamburger (Mobile) -->
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="home.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="project.html">Projects</a>
+      <a href="contact.html" class="active">Contact</a>
+    </div>
   </header>
 
-  <!-- Contact Section -->
+  <!-- ✅ CONTACT SECTION -->
   <section class="contact-section">
     <div class="contact-form">
       <h1>Say hello and let's work together!</h1>
@@ -251,7 +310,7 @@
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- ✅ FOOTER -->
   <footer>
     <div class="footer">
       <div>📞 <strong>+918827029878</strong></div>
@@ -271,6 +330,15 @@
       <div>©Copyright by <strong>Faizan Pathan</strong> | All rights reserved.</div>
     </div>
   </footer>
+
+  <!-- ✅ JS: Toggle Mobile Menu -->
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('mobileMenu');
+      // Toggle between flex / none
+      menu.style.display = (menu.style.display === 'flex') ? 'none' : 'flex';
+    }
+  </script>
 
 </body>
 </html>
