@@ -6,7 +6,11 @@
   <title>Faizan | UI/UX Designer</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
     body {
       font-family: 'Poppins', sans-serif;
       line-height: 1.6;
@@ -17,7 +21,6 @@
       color: #e91e63;
       text-decoration: none;
     }
-
     /* ✅ NAVBAR */
     .navbar {
       display: flex;
@@ -48,7 +51,6 @@
       border-radius: 50%;
       margin-right: 8px;
     }
-
     /* Desktop Menu */
     .nav-right {
       display: flex;
@@ -63,7 +65,6 @@
     .nav-right a.active {
       color: #e91e63;
     }
-
     /* ✅ Hamburger (Mobile only) */
     .hamburger {
       display: none;
@@ -80,7 +81,6 @@
       background: #2a2a2a;
       border-radius: 3px;
     }
-
     /* ✅ Mobile Menu Hidden initially */
     .mobile-menu {
       display: none;
@@ -104,7 +104,6 @@
     .mobile-menu a:last-child {
       border-bottom: none;
     }
-
     /* ✅ HERO SECTION */
     .hero {
       display: flex;
@@ -138,7 +137,6 @@
       width: 100%;
       border-radius: 50% 50% 0 0;
     }
-
     /* ✅ CARDS */
     .card-section {
       display: grid;
@@ -151,9 +149,17 @@
     .card {
       border-radius: 12px;
       padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 350px;
     }
-    .card.web { background: #f2fff4; }
-    .card.app { background: #fff1f4; }
+    .card.web {
+      background: #f2fff4;
+    }
+    .card.app {
+      background: #fff1f4;
+    }
     .card h3 {
       font-size: 20px;
       font-weight: 600;
@@ -163,6 +169,7 @@
       font-size: 14px;
       margin: 10px 0;
     }
+    /* Updated consistent button style */
     .btn-outline {
       border: 1px solid #e91e63;
       padding: 10px 20px;
@@ -173,18 +180,24 @@
       transition: 0.3s;
       display: inline-block;
       text-align: center;
+      margin-top: 10px;
     }
     .btn-outline:hover {
       background: #e91e63;
       color: #fff;
     }
-
+    .btn-align {
+      display: block;
+      width: max-content;
+      min-width: 160px;
+      text-align: center;
+      margin-top: 10px;
+    }
     /* Center Button */
     .btn-center {
       text-align: center;
       margin: 30px 0;
     }
-
     /* ✅ Skills */
     .skills {
       margin: 60px auto;
@@ -206,7 +219,6 @@
       padding-bottom: 8px;
       font-size: 14px;
     }
-
     /* ✅ FOOTER */
     .footer {
       display: flex;
@@ -225,7 +237,6 @@
       width: 20px;
       margin: 0 5px;
     }
-
     /* ✅ RESPONSIVE */
     @media (max-width: 768px) {
       /* Hide desktop nav */
@@ -236,7 +247,6 @@
       .hamburger {
         display: flex;
       }
-
       .navbar,
       .footer {
         flex-direction: column;
@@ -249,7 +259,6 @@
         font-size: 13px;
       }
     }
-
     @media (min-width: 1400px) {
       .hero-text h1 {
         font-size: 48px;
@@ -262,7 +271,6 @@
   </style>
 </head>
 <body>
-
   <!-- ✅ NAVBAR -->
   <header class="navbar">
     <div class="nav-left">
@@ -270,7 +278,6 @@
         <span class="dot"></span> Faizan Pathan
       </a>
     </div>
-
     <!-- Desktop Menu -->
     <nav class="nav-right">
       <a href="home.html" class="active">Home</a>
@@ -278,14 +285,12 @@
       <a href="project.html">Projects</a>
       <a href="contact.html">Contact</a>
     </nav>
-
     <!-- Hamburger (Mobile) -->
     <div class="hamburger" onclick="toggleMenu()">
       <span></span>
       <span></span>
       <span></span>
     </div>
-
     <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobileMenu">
       <a href="home.html" class="active">Home</a>
@@ -294,48 +299,45 @@
       <a href="contact.html">Contact</a>
     </div>
   </header>
-
   <!-- ✅ HERO SECTION -->
   <section class="hero">
     <div class="hero-text">
       <h1>Hello! I'm Faizan,<br />UI/UX Designer</h1>
-      <p>I'm Faizan, a creative UI/UX designer who crafts intuitive digital experiences. I blend design thinking with user empathy to solve real-world problems. Passionate about clean interfaces, smooth interactions, and making products that feel just right.</p>
+      <p>I'm Faizan, a creative UI/UX designer who crafts intuitive digital experiences. I blend design thinking with user empathy to solve real-world problems.<br />
+      Passionate about clean interfaces, smooth interactions, and making products that feel just right.</p>
       <a href="https://github.com/faizpathann/faizan-live/blob/main/faizan-resume.pdf">More about me →</a>
     </div>
     <div class="hero-image">
       <img src="IMG_20210801_194645_945.jpg" alt="Faizan Image" />
     </div>
   </section>
-
   <!-- ✅ CARD SECTION -->
   <section class="card-section">
     <div class="card web">
-      <p style="color: #2a2a2a;">Web Design</p>
-      <h3>Simran Farms</h3>
-      <p>Simran Farm's live website is a professional, clean, and user-friendly platform focused on poultry and 
-        agricultural products. It features a modern design with clear navigation, high-quality visuals, and a 
-        responsive layout for smooth use across devices.Investor section and career opportunities reflect a mature, growth-oriented business..</p>
-      <a href="https://www.behance.net/gallery/233332551/Simran-farms">View project ←</a>
+      <div class="content">
+        <p style="color: #2a2a2a;">Web Design</p>
+        <h3>Simran Farms</h3>
+        Simran Farm's live website is a professional, clean, and user-friendly platform focused on poultry and agricultural products.<br />
+        It features a modern design with clear navigation, high-quality visuals, and a responsive layout for smooth use across devices.<br />
+        Investor section and career opportunities reflect a mature, growth-oriented business.
+      </div>
+      <a href="https://www.behance.net/gallery/233332551/Simran-farms" class="btn-outline btn-align">View project ←</a>
     </div>
-
     <div class="card app">
-      <p style="color: #2a2a2a;">App Design</p>
-      <h3>Bank manager's dashboard</h3>
-      <p>A Bank Manager Report website is typically a digital platform or project designed to help bank 
-        managers monitor, analyze, and manage banking operations efficiently. It’s often created as part 
-        of a software system or academic project to simulate real-world banking tasks.
-
-</p>
-      <a href="https://www.figma.com/community/file/1506589318783916933/mobile-shopping-app" class="btn-outline">View project ←</a>
+      <div class="content">
+        <p style="color: #2a2a2a;">App Design</p>
+        <h3>Bank manager's dashboard</h3>
+        A Bank Manager Report website is typically a digital platform or project designed to help bank managers monitor, analyze, and manage banking operations efficiently.<br />
+        It’s often created as part of a software system or academic project to simulate real-world banking tasks.
+      </div>
+      <a href="https://www.figma.com/community/file/1506589318783916933/mobile-shopping-app" class="btn-outline btn-align">View project ←</a>
     </div>
   </section>
-
   <!-- Browse All Projects -->
-  <br>
+  <br />
   <div class="btn-center">
     <a href="https://www.behance.net/faizpathann">Browse all projects</a>
   </div>
-
   <!-- ✅ SKILLS -->
   <section class="skills">
     <h2>My skills</h2>
@@ -352,38 +354,29 @@
       <div>User Flows</div>
     </div>
   </section>
-
   <!-- ✅ FOOTER -->
   <footer>
     <div class="footer">
       <div>📞 <strong>+918827029878</strong></div>
       <div>📧 <strong><a href="mailto:faizan14srk@gmail.com">faizan14srk@gmail.com</a></strong></div>
       <div>
-        <strong>Follow us:</strong><br>
-        
-       
-
-        <a href="https://www.behance.net/faizpathann ">
+        <strong>Follow us:</strong><br />
+        <a href="https://www.behance.net/faizpathann">
           <img src="https://cdn-icons-png.flaticon.com/512/145/145799.png" class="icon" alt="Behance" />
         </a>
-        
         <a href="https://www.figma.com/@faizan40">
           <img src="https://cdn-icons-png.flaticon.com/512/5968/5968705.png" class="icon" alt="Figma" />
         </a>
-           <a href="https://www.linkedin.com/in/faizan-pathan-a397221b3/">
+        <a href="https://www.linkedin.com/in/faizan-pathan-a397221b3/">
           <img src="https://cdn-icons-png.flaticon.com/512/145/145807.png" class="icon" alt="LinkedIn" />
         </a>
-
         <a href="https://x.com/faizpathann">
           <img src="https://cdn-icons-png.flaticon.com/512/733/733635.png" class="icon" alt="Twitter" />
         </a>
-        
-        
       </div>
       <div>©Copyright by <strong>Faizan Pathan</strong> | All rights reserved.</div>
     </div>
   </footer>
-
   <!-- ✅ JS: Toggle Mobile Menu -->
   <script>
     function toggleMenu() {
@@ -391,9 +384,5 @@
       menu.style.display = (menu.style.display === 'flex') ? 'none' : 'flex';
     }
   </script>
-
 </body>
 </html>
-
-
-
